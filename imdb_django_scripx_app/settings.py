@@ -90,22 +90,13 @@ WSGI_APPLICATION = 'imdb_django_scripx_app.wsgi.application'
 #     }
 # }
 
-from dotenv import load_dotenv
 import os
-# load_dotenv()
 
-# name = os.getenv('NAME')
-# user = os.getenv('USER')
-# password = os.getenv('PASSWORD')
-# host = os.getenv('HOST')
-# port = os.getenv('PORT')
-
-name='railway'
-user='root'
-password='4CIdLyu4iukZnlfcq6Z5'
-host='containers-us-west-209.railway.app'
-port='6286'
-# URL='mysql://root:4CIdLyu4iukZnlfcq6Z5@containers-us-west-209.railway.app:6286/railway'
+name = os.getenv('NAME')
+user = os.getenv('USER')
+password = os.getenv('PASSWORD')
+host = os.getenv('HOST')
+port = os.getenv('PORT')
 
 DATABASES = {
     'default': {
