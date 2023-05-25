@@ -76,9 +76,7 @@ WSGI_APPLICATION = 'imdb_django_scripx_app.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-from dotenv import load_dotenv
 import os
-load_dotenv()
 
 
 # name = os.getenv('NAME')
