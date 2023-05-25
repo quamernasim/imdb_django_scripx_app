@@ -75,21 +75,22 @@ WSGI_APPLICATION = 'imdb_django_scripx_app.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+from dotenv import load_dotenv
 import os
+load_dotenv()
 
 
-# name = os.getenv('NAME')
-# user = os.getenv('USER')
-# password = os.getenv('PASSWORD')
-# host = os.getenv('HOST')
-# port = os.getenv('PORT')
+name = os.getenv('NAME')
+user = os.getenv('USER')
+password = os.getenv('PASSWORD')
+host = os.getenv('HOST')
+port = os.getenv('PORT')
 
-name='railway'
-user='root'
-password='4CIdLyu4iukZnlfcq6Z5'
-host='containers-us-west-209.railway.app'
-port='6286'
+# name='railway'
+# user='root'
+# password='4CIdLyu4iukZnlfcq6Z5'
+# host='containers-us-west-209.railway.app'
+# port='6286'
 
 DATABASES = {
     'default': {

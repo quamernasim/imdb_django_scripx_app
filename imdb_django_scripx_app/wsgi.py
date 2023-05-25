@@ -12,9 +12,5 @@ import os
 from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'imdb_django_scripx_app.settings')
-print('==============================================================================')
-from dotenv import load_dotenv
-load_dotenv()
-print(os.getenv('NAME'))
 
 application = get_wsgi_application()
