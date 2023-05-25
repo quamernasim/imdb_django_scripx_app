@@ -13,12 +13,17 @@ from .serializers import IMDBSerializer
 
 class IMDBView(View):
     def get(self, request):
+        # Get all records from the database
         imdb = IMDB.objects.all()
         return render(request, "app/allrecords.html", locals())
     
 @api_view(['GET'])
 def filter(request):
     if request.method == "GET":
+        # Get the genre and language from the request
+        # If genre is provided, filter by genre
+        # If language is provided, filter by language
+        # If both are provided, filter will be done by genre (based on assignment, this is not applicable)
         genre = request.GET.get('genre')
         language = request.GET.get('lang')
         if genre:
@@ -36,8 +41,10 @@ def filter(request):
 
 def filter_by_genre(genre):
     if genre.lower() == "none":
+        # If genre is none, filter by records with no genre
         imdb = IMDB.objects.filter(genre__isnull=True)
     else:
+        # do a case insensitive search for the genre, check if a record contains the requested genre
         imdb = IMDB.objects.filter(genre__icontains=genre)
     if imdb.exists():
         imdb_serializer = IMDBSerializer(imdb, many=True)
@@ -56,8 +63,10 @@ def filter_by_genre(genre):
         
 def filter_by_language(language):
     if language.lower() == "none":
+        # If language is none, filter by records with no language
         imdb = IMDB.objects.filter(language__isnull=True)
     else:
+        # do a case insensitive search for the language, check if a record contains the requested language
         imdb = IMDB.objects.filter(language__icontains=language)
     if imdb.exists():
         imdb_serializer = IMDBSerializer(imdb, many=True)
