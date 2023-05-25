@@ -80,17 +80,11 @@ import os
 load_dotenv()
 
 
-# name = os.getenv('NAME')
-# user = os.getenv('USER')
-# password = os.getenv('PASSWORD')
-# host = os.getenv('HOST')
-# port = os.getenv('PORT')
-
-name='railway'
-user='root'
-password='4CIdLyu4iukZnlfcq6Z5'
-host='containers-us-west-209.railway.app'
-port='6286'
+name = os.getenv('NAME')
+user = os.getenv('USER')
+password = os.getenv('PASSWORD')
+host = os.getenv('HOST')
+port = os.getenv('PORT')
 
 DATABASES = {
     'default': {
