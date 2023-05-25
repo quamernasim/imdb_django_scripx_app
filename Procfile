@@ -1,0 +1,1 @@
+web: gunicorn imdb_django_scripx_app.wsgi --log-file -
