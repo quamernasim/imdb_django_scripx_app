@@ -1,5 +1,11 @@
-<table>
-    <thead>
+{% extends 'base.html' %}
+{% block title %}All Records{% endblock title %}
+{% block main-content %}
+<div class="text-center">
+  <h1>All IMDB Records</h1>
+</div>
+  <table class="table table-bordered table-sm align-middle">
+    <thead class="table-primary">
       <tr>
         <th>IMDB Title ID</th>
         <th>Original Title</th>
@@ -13,21 +19,22 @@
         <th>Reviews from Critics</th>
       </tr>
     </thead>
-    <tbody>
-      {% for row in imdb %}
-        <tr>
-            <td>{{ row.imdb_title_id }}</td>
-            <td>{{ row.original_title }}</td>
-            <td>{{ row.year }}</td>
-            <td>{{ row.date_published }}</td>
-            <td>{{ row.genre }}</td>
-            <td>{{ row.duration }}</td>
-            <td>{{ row.language }}</td>
-            <td>{{ row.description }}</td>
-            <td>{{ row.reviews_from_users }}</td>
-            <td>{{ row.reviews_from_critics }}</td>
-        </tr>
-      {% endfor %}
+    <tbody class="table-group-divider">
+    {% for row in imdb %}
+      <tr>
+        <td>{{ row.imdb_title_id }}</td>
+        <td>{{ row.original_title }}</td>
+        <td>{{ row.year }}</td>
+        <td>{{ row.date_published }}</td>
+        <td>{{ row.genre }}</td>
+        <td>{{ row.duration }}</td>
+        <td>{{ row.language }}</td>
+        <td>{{ row.description }}</td>
+        <td>{{ row.reviews_from_users }}</td>
+        <td>{{ row.reviews_from_critics }}</td>
+      </tr>
+    {% endfor %}
     </tbody>
   </table>
+{% endblock main-content %}
   
