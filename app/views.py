@@ -24,6 +24,11 @@ def filter(request):
         # If genre is provided, filter by genre
         # If language is provided, filter by language
         # If both are provided, filter will be done by genre (based on assignment, this is not applicable)
+        # ============Efficient way to do filtering, but following assignement doc================
+        # query_params = request.query_params
+        # query_dict = {k+"__icontains":v for k,v in query_params.items()}
+        # queryset = IMDB.objects.filter(**query_dict)
+        # ============Efficient way to do filtering, but following assignement doc================
         genre = request.GET.get('genre')
         language = request.GET.get('lang')
         if genre:
